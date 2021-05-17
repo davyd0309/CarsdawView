@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+info:
+  app:
+    name: CarsdawView
+    description: View to app
+    version: 0.0.1-SNAPSHOT
+
+services:
+  carsdawApiService: https://carsdaw-api-service.herokuapp.com/
+
+
