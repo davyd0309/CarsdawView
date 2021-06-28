@@ -1,3 +1,14 @@
+server:
+  port: 8080
+
 spring:
   profiles:
     active: local
+
+info:
+  app:
+    name: CarsdawView
+    description: View to app
+    version: 0.0.1-SNAPSHOT
+
+

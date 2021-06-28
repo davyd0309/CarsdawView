@@ -1,20 +1,22 @@
 package pl.dawydiuk.CarsdawView.repairs;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class RepairsController {
+public class CarsRepairsController {
 
-    private CarsdawApiRepairsService service;
+    private final CarsdawApiRepairsService service;
 
-    @GetMapping()
+    public CarsRepairsController(CarsdawApiRepairsService service) {
+        this.service = service;
+    }
+
+    @GetMapping("/index")
     public ModelAndView getRepairsTable() {
-//        service.getAllCarRepairs().getBody()
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("name", "xxxxxxxxxxxx");
+        modelAndView.addObject("allRepairs", service.getAllCarRepairs().getBody());
         return modelAndView;
     }
 }
